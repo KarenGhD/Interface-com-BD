@@ -6,9 +6,10 @@ conn = psycopg2.connect(host="localhost",
         password="/@JK@bb78")
 print("Conexão com o Banco de Dados aberta com sucesso!")
 cur=conn.cursor() 
-cur.execute("""select * from public."AGENDA" where "id"=1""") 
-registro=cur.fetchone() 
-print(registro) 
+cur.execute('''CREATE TABLE Produto2(CODIGO2 INT PRIMARY KEY NOT NULL,
+            NOME2 TEXT NOT NULL,
+            PRECO2 REAL NOT NULL);''') 
+
 conn.commit() 
-print("Seleção realizada com sucesso!"); 
+print("Tabela criada com sucesso!"); 
 conn.close()
